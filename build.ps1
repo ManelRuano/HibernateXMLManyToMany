@@ -50,7 +50,7 @@ if (-not $isJavaFX) {
 } else {
     $jar_files = Get-ChildItem -Path $lib_dir -Filter "*.jar" -Recurse | ForEach-Object {
         if (-not $_.Name.Contains("javafx")) {
-            $_.FullName.Replace($lib_dir + '\', '')
+            ".\lib\" + $_.FullName.Replace($lib_dir + '\', '')
         }
     }
 }
