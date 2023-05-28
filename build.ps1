@@ -129,6 +129,11 @@ if (Test-Path -Path ".\$folderDevelopment\*.properties" -PathType Leaf) {
     Copy-Item -Path ".\$folderDevelopment\*.properties" -Destination ".\$folderRelease\" -Force
 }
 
+# Copy .xml if they exist (for hibernate)
+if (Test-Path -Path ".\$folderDevelopment\*.xml" -PathType Leaf) {
+    Copy-Item -Path ".\$folderDevelopment\*.xml" -Destination ".\$folderRelease\" -Force
+}
+
 # Create the 'run.sh' and 'run.ps1' files
 if (-not $isJavaFX) {
 @"
