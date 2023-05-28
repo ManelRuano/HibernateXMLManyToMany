@@ -46,7 +46,7 @@ if (Test-Path -Path "./icons") {
 $lib_dir = (Resolve-Path "lib").Path
 $jar_files = @()
 if (-not $isJavaFX) {
-    $jar_files = Get-ChildItem -Path $lib_dir -Filter "*.jar" -Recurse | ForEach-Object { $_.FullName.Replace($lib_dir + '\', '') }
+    $jar_files = Get-ChildItem -Path $lib_dir -Filter "*.jar" -Recurse | ForEach-Object { ".\lib\" + $_.FullName.Replace($lib_dir + '\', '') }
 } else {
     $jar_files = Get-ChildItem -Path $lib_dir -Filter "*.jar" -Recurse | ForEach-Object {
         if (-not $_.Name.Contains("javafx")) {
