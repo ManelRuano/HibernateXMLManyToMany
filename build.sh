@@ -181,7 +181,7 @@ cat > ./$folderRelease/run.ps1 << EOF
 java $HIBERNATEW --module-path "./lib/javafx-windows/lib" --add-modules javafx.controls,javafx.fxml $CLASSPATHW Main
 EOF
 fi
-
+echo java $HIBERNATEX \$ICON \$MODULEPATH $CLASSPATHX Main
 # Fem l'arxiu executable
 chmod +x ./$folderRelease/run.sh
 
