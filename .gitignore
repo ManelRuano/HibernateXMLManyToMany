@@ -30,3 +30,5 @@ bin/*
 Release/
 node_modules
 
+target/classes
+target/maven-status
